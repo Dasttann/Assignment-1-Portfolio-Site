@@ -1,0 +1,74 @@
+/* 
+  File: Projects.css
+  Student: Dastan
+  StudentID: 301454423
+  Date: 2024-05-24
+*/
+.projects-page {
+  max-width: 1050px;
+  margin: 60px auto 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.08);
+  text-align: center;
+  padding: 44px 26px 36px 26px;
+}
+
+.projects-page h2 {
+  color: #003366;
+  font-size: 2rem;
+  margin-bottom: 32px;
+}
+
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.project-card {
+  background: #f9fafc;
+  border-radius: 12px;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+  padding: 24px 20px 22px 20px;
+  width: 300px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-img {
+  width: 100%;
+  max-width: 240px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  background: #e6eaf1;
+  border: 2px solid #003366;
+}
+
+.project-card h3 {
+  color: #003366;
+  font-size: 1.23rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.project-card p {
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1050px) {
+  .projects-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+}

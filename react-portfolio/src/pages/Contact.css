@@ -1,0 +1,56 @@
+/* 
+  File: Contact.css
+  Student: Dastan
+  StudentID: 301454423
+  Date: 2024-05-24
+*/
+.contact-page {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 32px;
+  background: #fcfcff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.contact-page h2 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  margin-bottom: 24px;
+  color: #444;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 10px 0;
+  background: #003366;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.contact-form button:hover {
+  background: #0055a5;
+}

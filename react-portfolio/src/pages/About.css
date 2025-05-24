@@ -1,0 +1,108 @@
+/* 
+  File: About.css
+  Student: Dastan
+  StudentID: 301454423
+  Date: 2024-05-24
+*/
+
+.about-page {
+  max-width: 750px;
+  margin: 60px auto 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.08);
+  text-align: center;
+  padding: 44px 26px 36px 26px;
+}
+
+.about-page h2 {
+  color: #003366;
+  margin-bottom: 18px;
+  font-size: 2.2rem;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  font-weight: 700;
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #003366;
+  background: #e6eaf1;
+}
+
+.resume-link {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 0;
+  background: #003366;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: background 0.18s;
+}
+
+.resume-link:hover {
+  background: #0055a5;
+}
+
+.about-description {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.about-description p {
+  color: #444;
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+/* Responsive for mobile */
+@media (max-width: 700px) {
+  .about-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .about-description {
+    text-align: center;
+  }
+  .about-page {
+    padding: 20px 4px;
+  }
+  .resume-link-row {
+  text-align: center;
+  margin: 22px 0 12px 0;
+}
+
+.resume-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #003366;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: background 0.18s;
+}
+
+.resume-link:hover {
+  background: #0055a5;
+}
+
+}
+
