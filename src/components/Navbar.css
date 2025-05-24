@@ -60,7 +60,6 @@
   color: #e6e6e6 !important;
 }
 
-/* Responsive for mobile */
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
