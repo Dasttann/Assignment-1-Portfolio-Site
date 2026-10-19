@@ -1,0 +1,7 @@
+const User = require('../models/User');
+exports.getAll = async (_req,res,next)=>{try{res.json(await User.find().select('-password'));}catch(e){next(e);}};
+exports.getById = async (req,res,next)=>{try{const u=await User.findById(req.params.id).select('-password');if(!u)return res.status(404).json({message:'User not found'});res.json(u);}catch(e){next(e);}};
+exports.create = async (req,res,next)=>{try{const {name,email,password}=req.body;if(await User.findOne({email}))return res.status(409).json({message:'Email already registered'});res.status(201).json(await User.create({name,email,password}));}catch(e){next(e);}};
+exports.update = async (req,res,next)=>{try{const u=await User.findById(req.params.id);if(!u)return res.status(404).json({message:'User not found'});if(req.body.name!==undefined)u.name=req.body.name;if(req.body.email!==undefined)u.email=req.body.email;if(req.body.password!==undefined)u.password=req.body.password;u.updated=new Date();await u.save();res.json(u);}catch(e){next(e);}};
+exports.remove = async (req,res,next)=>{try{const u=await User.findByIdAndDelete(req.params.id);if(!u)return res.status(404).json({message:'User not found'});res.json({message:'User deleted successfully'});}catch(e){next(e);}};
+exports.removeAll = async (_req,res,next)=>{try{const r=await User.deleteMany({});res.json({message:'All users deleted',deletedCount:r.deletedCount});}catch(e){next(e);}};
