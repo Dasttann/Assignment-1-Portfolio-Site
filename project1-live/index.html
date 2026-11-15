@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dastan Barzkar | Portfolio</title>
+<style>
+:root{--bg:#0b1220;--card:#121b2e;--soft:#1c2942;--text:#eef4ff;--muted:#a9b7cf;--accent:#70d6ff;--accent2:#8affc1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#08101d,#0d1728 52%,#08101d);color:var(--text);line-height:1.6}
+nav{position:sticky;top:0;z-index:10;background:rgba(8,16,29,.9);backdrop-filter:blur(10px);border-bottom:1px solid #25314a}
+.nav{max-width:1080px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:.5px}.brand span{color:var(--accent)}
+.links a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}.links a:hover{color:var(--text)}
+.wrap{max-width:1080px;margin:auto;padding:0 24px}
+.hero{min-height:76vh;display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:center;padding:74px 0 54px}
+.kicker{color:var(--accent2);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:13px}
+h1{font-size:58px;line-height:1.04;margin:12px 0 18px}h1 span{color:var(--accent)}.lead{font-size:19px;color:var(--muted);max-width:700px}
+.cta{display:flex;gap:12px;margin-top:28px}.btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}.primary{background:var(--accent);color:#07101c}.ghost{border:1px solid #3a4b6d;color:var(--text)}
+.portrait{width:100%;max-width:330px;justify-self:end;border-radius:28px;border:1px solid #334363;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+section{padding:68px 0}.section-title{font-size:32px;margin:0 0 10px}.section-sub{color:var(--muted);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(180deg,var(--card),#0f192b);border:1px solid #263652;border-radius:16px;padding:22px}.card h3{margin:4px 0 10px}.card p{color:var(--muted);margin:0}
+.tags{margin-top:16px}.tag{display:inline-block;padding:5px 9px;margin:4px 6px 0 0;border-radius:999px;background:#17253e;border:1px solid #2d4166;color:#cfe1ff;font-size:12px}
+.timeline{display:grid;grid-template-columns:1fr 1fr;gap:18px}.wide{grid-column:1/-1}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}.contact .card a{color:var(--accent)}
+footer{border-top:1px solid #25314a;color:var(--muted);padding:26px 0 44px;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#11233b;border:1px solid #2b4b70;border-radius:999px;padding:7px 11px;color:#d8ecff;font-size:13px;margin-top:18px}.dot{width:8px;height:8px;border-radius:50%;background:#65f3a6;box-shadow:0 0 0 4px rgba(101,243,166,.12)}
+@media(max-width:760px){.hero{grid-template-columns:1fr;min-height:auto}.portrait{justify-self:start;max-width:250px}.grid,.timeline,.contact{grid-template-columns:1fr}h1{font-size:42px}.links{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="nav"><div class="brand">Dastan<span>.</span></div><div class="links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></div></nav>
+<main class="wrap">
+<section class="hero">
+<div>
+<div class="kicker">Software Engineering Technician</div>
+<h1>Hi, I’m <span>Dastan Barzkar</span>.</h1>
+<p class="lead">I build practical web applications with React, Node.js, Express and MongoDB. This portfolio highlights coursework and project work completed for COMP229 — Web Application Development.</p>
+<div class="cta"><a class="btn primary" href="#projects">View Projects</a><a class="btn ghost" href="#contact">Contact Me</a></div>
+<div class="badge"><span class="dot"></span>Portfolio frontend is live</div>
+</div>
+<img class="portrait" src="../public/HeadShot.jpg" alt="Dastan Barzkar headshot">
+</section>
+
+<section id="about">
+<h2 class="section-title">About Me</h2><p class="section-sub">Student developer focused on full-stack JavaScript and maintainable web interfaces.</p>
+<div class="timeline">
+<div class="card"><h3>Education</h3><p>Software Engineering Technician program, with coursework in web application development, databases, software design and networking.</p></div>
+<div class="card"><h3>Current Focus</h3><p>Building MERN applications with reusable React components, REST APIs, authentication and structured data models.</p></div>
+<div class="card wide"><h3>COMP229 Project Direction</h3><p>MyPortfolio is being developed as a portfolio application that combines a React frontend with a Node.js / Express backend, Mongoose models, CRUD routes and JWT-based authentication.</p></div>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="section-title">Projects</h2><p class="section-sub">Selected academic and portfolio work.</p>
+<div class="grid">
+<div class="card"><h3>MyPortfolio</h3><p>Personal portfolio interface developed in React and extended for COMP229 full-stack coursework.</p><div class="tags"><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">CSS</span></div></div>
+<div class="card"><h3>REST API Backend</h3><p>Express/Mongoose backend structure for contacts, projects, qualifications and users with CRUD routes and JWT authentication.</p><div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span></div></div>
+<div class="card"><h3>Database Coursework</h3><p>SQL and PL/SQL exercises covering queries, procedures, functions, cursors and database programming concepts.</p><div class="tags"><span class="tag">SQL</span><span class="tag">PL/SQL</span><span class="tag">Oracle</span></div></div>
+</div>
+</section>
+
+<section id="skills">
+<h2 class="section-title">Technical Skills</h2><p class="section-sub">Tools and technologies used in coursework and project development.</p>
+<div class="grid">
+<div class="card"><h3>Frontend</h3><p>React, HTML5, CSS3, JavaScript, responsive layouts and component-based UI development.</p></div>
+<div class="card"><h3>Backend</h3><p>Node.js, Express, REST API design, middleware, JWT authentication and CRUD operations.</p></div>
+<div class="card"><h3>Data & Tools</h3><p>MongoDB/Mongoose, SQL, Git/GitHub, VS Code and API testing workflows.</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact</h2><p class="section-sub">Connect with me or review the project source.</p>
+<div class="contact">
+<div class="card"><h3>GitHub</h3><p><a href="https://github.com/Dasttann/Assignment-1-Portfolio-Site" target="_blank" rel="noopener">github.com/Dasttann/Assignment-1-Portfolio-Site</a></p></div>
+<div class="card"><h3>Project</h3><p>COMP229 — Web Application Development<br>Project Part 1</p></div>
+</div>
+</section>
+</main>
+<footer>© 2026 Dastan Barzkar · COMP229 Portfolio</footer>
+</body>
+</html>
