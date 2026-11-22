@@ -1,0 +1,10 @@
+import React,{useEffect,useState}from'react';import{createRoot}from'react-dom/client';import{request}from'./api';import'./styles.css';
+function App(){
+ const[view,setView]=useState('projects'),[rows,setRows]=useState([]),[token,setToken]=useState(localStorage.getItem('a3_token')||''),[user,setUser]=useState(()=>JSON.parse(localStorage.getItem('a3_user')||'null'));
+ const[auth,setAuth]=useState({name:'Dastan Barzkar',email:'',password:''}),[mode,setMode]=useState('signin'),[form,setForm]=useState({title:'',firstname:'Dastan',lastname:'Barzkar',email:'dastan@example.com',completion:'2026-12-01',description:''});
+ const endpoint=view==='education'?'qualifications':view,isAdmin=user?.role==='admin';
+ async function load(){if(view==='dashboard')return;try{setRows(await request('/'+endpoint))}catch{setRows([])}} useEffect(()=>{load()},[view]);
+ async function login(e){e.preventDefault();const d=await request('/auth/'+mode,{method:'POST',body:auth});localStorage.setItem('a3_token',d.token);localStorage.setItem('a3_user',JSON.stringify(d.user));setToken(d.token);setUser(d.user)}
+ async function save(e){e.preventDefault();await request('/'+endpoint,{method:'POST',token,body:form});load()}
+ return <main><h1>Dastan Barzkar — Full Stack Portfolio</h1><p>{user?user.role:'Guest'} session</p><nav>{['projects','education','contacts'].map(x=><button onClick={()=>setView(x)}>{x}</button>)}</nav>{!user&&<form onSubmit={login}><input value={auth.email} onChange={e=>setAuth({...auth,email:e.target.value})}/><input type="password" value={auth.password} onChange={e=>setAuth({...auth,password:e.target.value})}/><button>{mode}</button></form>}<section>{rows.map(r=><article key={r._id}><h3>{r.title||r.firstname+' '+r.lastname}</h3><p>{r.description||r.message}</p></article>)}</section>{isAdmin&&<form onSubmit={save}><input value={form.title} onChange={e=>setForm({...form,title:e.target.value})}/><textarea value={form.description} onChange={e=>setForm({...form,description:e.target.value})}/><button>Create</button></form>}</main>
+}createRoot(document.getElementById('root')).render(<App/>);
