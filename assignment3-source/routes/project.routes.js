@@ -1,0 +1,2 @@
+const express=require('express'); const c=require('../controllers/project.controller'); const {auth,adminOnly}=require('../middleware/auth'); const r=express.Router();
+r.get('/',c.list); r.get('/:id',c.get); r.post('/',auth,adminOnly,c.create); r.put('/:id',auth,adminOnly,c.update); r.delete('/:id',auth,adminOnly,c.remove); r.delete('/',auth,adminOnly,c.removeAll); module.exports=r;
