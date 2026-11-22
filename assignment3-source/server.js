@@ -1,0 +1,12 @@
+require('dotenv').config();
+const express=require('express'); const cors=require('cors'); const connectDB=require('./config/db');
+const app=express(); app.use(cors({origin:process.env.CLIENT_ORIGIN||true,credentials:true})); app.use(express.json());
+app.get('/api/health',(req,res)=>res.json({status:'ok',app:'MyPortfolio Assignment 3'}));
+app.use('/api/contacts',require('./routes/contact.routes'));
+app.use('/api/projects',require('./routes/project.routes'));
+app.use('/api/qualifications',require('./routes/qualification.routes'));
+app.use('/api/users',require('./routes/user.routes'));
+app.use('/api/auth',require('./routes/auth.routes'));
+app.use((err,req,res,next)=>res.status(err.status||500).json({message:err.message||'Internal server error'}));
+const PORT=process.env.PORT||8080;
+connectDB().then(()=>app.listen(PORT,()=>console.log(`MyPortfolio API listening on port ${PORT}`))).catch(e=>{console.error(e.message);process.exit(1)});
